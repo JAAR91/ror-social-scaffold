@@ -1,0 +1,9 @@
+<ul class="list-group">
+    <% @friendships.each do |friend| %>
+    <li class="list-group-item d-flex justify-content-between">
+        <%= friend.user.name %>/
+        <%= friend.friend.name %>/
+        <%= friend.status %>
+    </li>
+    <%end%>
+</ul>

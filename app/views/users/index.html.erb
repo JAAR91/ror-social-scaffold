@@ -1,5 +1,11 @@
 <section class="users-section">
-  <ul class="users-list">
-    <%= render @users %>
+  <ul class="list-group">
+    <% @users.each do |user| %>
+      <li class="list-group-item">
+        <%= user.name %>
+        <%= link_to 'See profile', user_path(user.id), class:'link-success mx-3' %>
+        <%= friend_user_links(user) %>
+      </li>
+    <%end%>
   </ul>
 </section>

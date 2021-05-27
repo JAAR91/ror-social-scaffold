@@ -1,0 +1,11 @@
+<ul class="list-group">
+    <% @friend_requests.each do |friend_request|%>
+        <li class="list-group-item d-flex justify-content-between">
+            <p>Friend request sent by: <%= friend_request.user.name %> </p>
+            <div class="mx-3">
+                <%= link_to('Accept!', inviteaccepted_path(id: friend_request.id, status: 'accepted', location: invitations_path), method: :patch, class:'btn btn-outline-success btn-sm mx-3') %>
+                <%= link_to('Refuse!', user_friendship_path(user_id:friend_request.id, id: friend_request.id, location: invitations_path), method: :delete, class:'btn btn-outline-danger btn-sm') %>
+            </div>
+        </li>
+    <%end%>
+</ul>
