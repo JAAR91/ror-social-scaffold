@@ -1,8 +1,7 @@
 class FriendshipsController < ApplicationController
 
   def index
-    @user = User.find(current_user.id)
-    @friendships = @user.friendships.accepted
+    @friendships = Friendship.accepted.where("user_id = ? OR friend_id = ?", current_user.id, current_user.id)
   end
 
   def create
@@ -16,7 +15,7 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    friend = current_user.friendships.find(params[:id])
+    friend = Friendship.find(params[:id])
     if friend
       friend.destroy
       redirect_to params[:location], alert: 'Friend removed from your friend list'
@@ -31,8 +30,7 @@ class FriendshipsController < ApplicationController
 
   def update
     @friendship = Friendship.find(params[:id])
-    @ffriend = Friendship.new(user_id: @friendship.friend_id, friend_id: @friendship.user_id, status: 'accepted')
-    if @friendship.update(status: params[:status]) && @ffriend.save
+    if @friendship.update(status: params[:status])
       redirect_to params[:location], alert: 'Friend request accepted'
     else
       redirect_to params[:location], alert: 'Could process that request'
