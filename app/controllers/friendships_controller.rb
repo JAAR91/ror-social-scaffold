@@ -1,12 +1,11 @@
 class FriendshipsController < ApplicationController
-
   def index
     @friendships = current_user.friendships.accepted
   end
 
   def create
     @friend = current_user.friendships.new(friend_id: params[:friend_id], status: 'pending')
-   
+
     if @friend.save
       redirect_to params[:location], alert: "Friend request sent to #{@friend.friend.name}"
     else
@@ -23,7 +22,7 @@ class FriendshipsController < ApplicationController
       redirect_to params[:location], alert: "#{@friendship.friend.name} was removed from your friend list"
     else
       @friendship.destroy
-      redirect_to params[:location], alert: "Friend request refused"
+      redirect_to params[:location], alert: 'Friend request refused'
     end
   end
 
@@ -40,5 +39,4 @@ class FriendshipsController < ApplicationController
       redirect_to params[:location], alert: 'Could not process that request'
     end
   end
-
 end
