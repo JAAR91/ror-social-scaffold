@@ -1,0 +1,2 @@
+<%= link_to('Accept!', inviteaccepted_path(id: friend_request.id, location: location), method: :patch, class:'btn btn-outline-success btn-sm mx-3') %>
+<%= link_to('Decline!', invitedecline_path(id:friend_request.id, location: location, friend: 'decline'), method: :delete, class:'btn btn-outline-danger btn-sm') %>

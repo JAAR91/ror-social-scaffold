@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   get '/users/:user_id/friend_request', to: 'friendships#friend_request', as: 'invitations'
-  patch '/friendship/:id', to: 'friendships#update', as: 'inviteaccepted'
+  patch '/friendship/:id', to: 'friendships#friendaccepted', as: 'inviteaccepted'
+  delete '/friendship/:id', to: 'friendships#frienddecline', as: 'invitedecline'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

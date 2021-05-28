@@ -1,12 +1,12 @@
 class FriendshipsController < ApplicationController
 
   def index
-    @friendships = Friendship.accepted.where("user_id = ? OR friend_id = ?", current_user.id, current_user.id)
+    @friendships = current_user.friendships.accepted
   end
 
   def create
     @friend = current_user.friendships.new(friend_id: params[:friend_id], status: 'pending')
-
+   
     if @friend.save
       redirect_to params[:location], alert: "Friend request sent to #{@friend.friend.name}"
     else
@@ -14,26 +14,30 @@ class FriendshipsController < ApplicationController
     end
   end
 
-  def destroy
-    friend = Friendship.find(params[:id])
-    if friend
-      friend.destroy
-      redirect_to params[:location], alert: 'Friend removed from your friend list'
+  def frienddecline
+    @friendship = Friendship.find(params[:id])
+    if params[:friend] == 'delete'
+      @n_friendship = current_user.inverted_friendships.find_by(user_id: @friendship.friend_id)
+      @friendship.destroy
+      @n_friendship.destroy
+      redirect_to params[:location], alert: "#{@friendship.friend.name} was removed from your friend list"
     else
-      redirect_to params[:location], alert: 'You cant remove this friend from your friend list'
+      @friendship.destroy
+      redirect_to params[:location], alert: "Friend request refused"
     end
   end
 
   def friend_request
-    @friend_requests = Friendship.where(:friend_id => current_user.id, :status => 'pending')
+    @friend_requests = current_user.inverted_friendships.pending
   end
 
-  def update
+  def friendaccepted
     @friendship = Friendship.find(params[:id])
-    if @friendship.update(status: params[:status])
+    @n_friendship = current_user.friendships.new(status: 'accepted', friend_id: @friendship.user_id)
+    if @friendship.update(status: 'accepted') && @n_friendship.save
       redirect_to params[:location], alert: 'Friend request accepted'
     else
-      redirect_to params[:location], alert: 'Could process that request'
+      redirect_to params[:location], alert: 'Could not process that request'
     end
   end
 
