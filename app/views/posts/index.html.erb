@@ -9,7 +9,9 @@
   <h3>
     Recent posts
   </h3>
-  <ul class="posts">
-    <%= render @timeline_posts %>
+  <ul class="list-group list-group-flush container">
+      <li class="list-group-item">
+        <%= render timeline_friend_post(@timeline_posts, @my_posts)%>
+      </li>
   </ul>
 </article>
