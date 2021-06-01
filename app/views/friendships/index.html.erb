@@ -4,7 +4,7 @@
         <p class="mx-3"><%= friend.friend.name %>
         (<%= link_to 'See profile', user_path(friend.friend_id), class:'link-success' %>)</p>
         <div>
-            <%= link_to('Delete Friend!', user_friendship_path(user_id:current_user.id, id: friend.id, location: users_path), method: :delete, class:'btn btn-outline-danger btn-sm') %>
+            <%= link_to('Delete Friend!', invitedecline_path(id: friend.id, location: user_friendships_path(current_user.id), friend: 'delete'), method: :delete, class:'btn btn-outline-danger btn-sm') %>
         </div>
         
     </li>

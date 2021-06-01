@@ -4,7 +4,9 @@
       <li class="list-group-item d-flex justify-content-between">
         <p class= "mx-3"><%= user.name %>
         (<%= link_to 'See profile', user_path(user.id), class:'link-success' %>)</p>
-        <%= friend_user_links(user) %>
+        <div>
+          <%= friend_user_links(user) %>
+        </div>
       </li>
     <%end%>
   </ul>

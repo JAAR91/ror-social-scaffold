@@ -17,8 +17,12 @@ module ApplicationHelper
   end
 
   def friends?(user1, user2)
-    return user1.friendships.find_by(friend_id: user2.id) if !user1.friendships.find_by(friend_id: user2.id).nil?
-    return user2.friendships.find_by(friend_id: user1.id) if !user2.friendships.find_by(friend_id: user1.id).nil?
+    friends = user1.friendships.find_by(friend_id: user2.id)
+    return friends unless friends.nil?
+
+    friends = user1.inverted_friendships.find_by(user_id: user2.id)
+    return friends unless friends.nil?
+
     nil
   end
 end

@@ -1,6 +1,7 @@
 class Friendship < ApplicationRecord
   belongs_to :user
   belongs_to :friend, class_name: 'User'
+  has_many :posts, through: :friend
 
   scope :accepted, -> { where('status = ?', 'accepted') }
   scope :pending, -> { where('status = ?', 'pending') }
