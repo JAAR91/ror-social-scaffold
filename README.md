@@ -86,9 +86,20 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
+- Microverse ( https://www.microverse.org/ )
 
 ## 📝 License
 
-TBA
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
 
