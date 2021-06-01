@@ -1,6 +1,6 @@
 # Scaffold for social media app with Ruby on Rails
 
-> This project is a base concept of a social media platform, where users can add friends, delete friends, and post. The project includes the option to send friend requests that can be found on the notifications sections, where you can accept or decline a friend request. The post page will show only the post from your friends.
+> This project is a base of a social media platform where users can add each other as friends and post. The project includes the option to send a friend request, also your users have notifications sections where they can accept or decline a friend request. Also from the main page, you can add posts and see only your friend's posts.
 
 ## Built With
 
@@ -9,22 +9,33 @@
 
 ### Deployment
 
-Wesite:[Heroku](https://secret-plains-32456.herokuapp.com/)
+Wesite: [Heroku](https://secret-plains-32456.herokuapp.com/)
 
+### Prerequisites
+
+- Windows, Mac or Linux machine 
+- Web browser other than Internet Explorer
+- Ruby: 2.6.3
+- Rails: 5.2.3
+- Postgres: >=9.5 [Set up process](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04)
 
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+- First you need to fork the repository [social-scaffold](https://github.com/JAAR91/ror-social-scaffold)
 
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
+- Copy the ssh using the green code button
+
+- Then you clone the repository to your pc using, the command on your terminal:
+
+```
+git clone 'ssh code  you copy early'
+```
 
 ### Setup
 
-Instal gems with:
+Install gems with:
 
 ```
 bundle install
@@ -37,16 +48,6 @@ Setup database with:
    rails db:migrate
 ```
 
-### Github Actions
-
-To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
-
-1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
-2. Create the `feature/branch` and push.
-3. Start working on your milestone as usual.
-4. Open a PR from the `feature/branch` when your work is done.
-
-
 ### Usage
 
 Start server with:
@@ -56,13 +57,6 @@ Start server with:
 ```
 
 Open `http://localhost:3000/` in your browser.
-
-### Run tests
-
-```
-    rpsec --format documentation
-```
-
 
 ## Authors
 
