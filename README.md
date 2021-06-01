@@ -9,7 +9,7 @@
 
 ### Deployment
 
-Wesite:[Heroku](https://secret-plains-32456.herokuapp.com/)
+Wesite: [Heroku](https://secret-plains-32456.herokuapp.com/)
 
 
 ## Getting Started
