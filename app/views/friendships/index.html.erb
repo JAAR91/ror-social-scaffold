@@ -1,0 +1,12 @@
+<ul class="list-group">
+    <% @friendships.each do |friend| %>
+    <li class="list-group-item d-flex justify-content-between">
+        <p class="mx-3"><%= friend.friend.name %>
+        (<%= link_to 'See profile', user_path(friend.friend_id), class:'link-success' %>)</p>
+        <div>
+            <%= link_to('Delete Friend!', invitedecline_path(id: friend.id, location: user_friendships_path(current_user.id), friend: 'delete'), method: :delete, class:'btn btn-outline-danger btn-sm') %>
+        </div>
+        
+    </li>
+    <%end%>
+</ul>

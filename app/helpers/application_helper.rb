@@ -15,4 +15,14 @@ module ApplicationHelper
       link_to('Like!', post_likes_path(post_id: post.id), method: :post)
     end
   end
+
+  def friends?(user1, user2)
+    friends = user1.friendships.find_by(friend_id: user2.id)
+    return friends unless friends.nil?
+
+    friends = user1.inverted_friendships.find_by(user_id: user2.id)
+    return friends unless friends.nil?
+
+    nil
+  end
 end

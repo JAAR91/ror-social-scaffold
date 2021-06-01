@@ -1,0 +1,10 @@
+<ul class="list-group">
+    <% @friend_requests.each do |friend_request|%>
+        <li class="list-group-item d-flex justify-content-between">
+            <p>Friend request sent by: <%= friend_request.user.name %> </p>
+            <div class="mx-3">
+                <%= render "friendform", friend_request: friend_request, location: invitations_path(current_user.id) %>
+            </div>
+        </li>
+    <%end%>
+</ul>

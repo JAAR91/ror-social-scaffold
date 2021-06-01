@@ -1,15 +1,15 @@
 # Scaffold for social media app with Ruby on Rails
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+> This project is a base concept of a social media platform, where users can add friends, delete friends, and post. The project includes the option to send friend requests that can be found on the notifications sections, where you can accept or decline a friend request. The post page will show only the post from your friends.
 
 ## Built With
 
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
 
-## Live Demo
+### Deployment
 
-TBA
+Wesite:[Heroku](https://secret-plains-32456.herokuapp.com/)
 
 
 ## Getting Started
@@ -63,15 +63,16 @@ Open `http://localhost:3000/` in your browser.
     rpsec --format documentation
 ```
 
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
-
-### Deployment
-
-TBA
 
 ## Authors
 
-TBA
+👤 **Jose Alberto Arriaga Ramos**
+
+- GitHub: [@jaarkira](https://github.com/jaarkira )
+
+- Twitter: [@91_jaar](https://twitter.com/91_jaar )
+
+- LinkedIn: [Jose Arriaga](https://www.linkedin.com/in/jaar/)
 
 ## 🤝 Contributing
 
@@ -85,9 +86,20 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
+- Microverse ( https://www.microverse.org/ )
 
 ## 📝 License
 
-TBA
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
 
