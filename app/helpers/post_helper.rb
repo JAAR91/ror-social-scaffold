@@ -8,9 +8,9 @@ module PostHelper
   def timeline_friend_post(friends, my_posts)
     array = []
     friends.each do |item|
-      item.each{|post| array << post}
+      item.each { |post| array << post }
     end
-    my_posts.each{|post| array << post}
+    my_posts.each { |post| array << post }
     array.sort.reverse
   end
 end

@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   private
 
   def timeline_posts
-    @timeline_posts = current_user.friendships.map{|item| item.posts }
+    @timeline_posts = current_user.friendships.map(&:posts)
     @my_posts = current_user.posts
   end
 
